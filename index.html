@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70716244-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-70716244-1');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=320,initial-scale=1.0,target-densityDPI=320dpi">
+
+    <title>Army of Unicorns</title>
+    
+    <link rel="icon" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link href="css/aou_styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.fullPage.css" rel="stylesheet" type="text/css" />
+    <link href="css/animated-border.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#fullpage').fullpage({
+            sectionsColor: ['#F4F4F4'],
+            anchors: ['firstPage'],
+          });
+
+          $(window).load(function() {
+             $('div').each(function(i) {
+                $(this).delay((i + 1) * 150).fadeIn(250);
+             });
+          });
+
+          setTimeout(function (){
+      			var w1 = $(window).width();
+      			$('meta[name="viewport"]').remove();//remove previous metatag (no reason just so we keep it clean)
+      			var px = 480;//target width to achieve
+      			var x = 320/w1;// calculate ratio (320 is the width set by viewport on head->meta,
+      			var out = Math.floor(px*x);//outcome..
+      			// var out = Math.floor( (32/ w1) * 480 )// alternative shortcode remove the 3 lines above :)
+      			$('<meta name="viewport" id="the_vp_special" content="width=320,initial-scale=1.0,target-densityDPI='+out+'dpi"/>').appendTo('head');//insert the new meta tag on the head 
+    			},250);
+      });
+    </script>
+    <script type="text/javascript">
+      function on() {
+          document.getElementById("contact_overlay").style.display = "block";
+      }
+
+      function off() {
+          document.getElementById("contact_overlay").style.display = "none";
+      }
+
+    </script>
+
+  </head>
+  <body>
+
+  <!-- This is the logo -->
+  <div class="circle_time">
+    <img src="images/armyofunicorns_logo_black.png" class="logo_mark_black" id="logo" />
+  </div>
+
+  <!-- This is the Contact button -->
+  <div class="button_style">
+    <a href='javascript:on();' class='ui-box bottom-rightStart'><span class='ui-border-element'>Contact</span></a>
+  </div>
+
+  <!-- This is the overlay for contact content -->
+  <span id="contact_overlay" onclick="off()">
+    <span class="center">
+        <a href="mailto:anthony.w.hall@gmail.com" target="_blank"><img src="images/contact_email.png" class="white_background"></a><a href="https://github.com/armyofunicorns" target="_blank"><img src="images/contact_github.png" class="white_background"></a><a href="https://www.linkedin.com/in/anthonyhall/" target="_blank"><img src="images/contact_linkedin.png" class="white_background"></a>
+    </span>
+  </span>
+
+ 
+  <!-- This is the splash page content -->
+  <div id="fullpage">
+      <div class="section active" id="section0">
+          <div class="inside_span"> 
+            <h1>Hello. My name is Anthony.</h1>
+            <p>I’m a UX UI designer, developer, and strategist. I like unicorns. Don't judge LOL. I believe design can simplify the complex. That a well-crafted, engaging story can produce meaningful connections that increase business value. My goal is to use data to identify business opportunities, then develop tools that delight and inspire. Currently, I am building <a href="https://opescloud.com" target="_blank">OPES CLOUD</a>. Designed for healthcare practices and patients, our software creates personalized experiences that lead to better outcomes.</p> 
+        <div>
+
+        
+      </div>
+  </div> 
+
+  <!-- This is the image at the bottom of the page -->
+  <div class="onbottom">
+    <img src="images/Splash_cover.jpg" class="makeitfit">
+  </div>
+
+  </body>
+</html>
