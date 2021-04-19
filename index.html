@@ -20,7 +20,7 @@
         <!-- JQuery -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+        <script type="text/javascript" src="./assets/js/jquery.fullPage.js"></script>
 
         <!--  -->
         <script type="text/javascript">
@@ -61,41 +61,71 @@
         </script>
   </head>
   <body>
+  <header>
+    <!-- This is the logo -->
+    <div class="circle_time">
+      <img src="./assets/images/armyofunicorns_logo_black.png" class="logo_mark_black" id="logo" />
+    </div>
 
-  <!-- This is the logo -->
-  <div class="circle_time">
-    <img src="images/armyofunicorns_logo_black.png" class="logo_mark_black" id="logo" />
-  </div>
-
-  <!-- This is the Contact button -->
-  <div class="button_style">
-    <a href='javascript:on();' class='ui-box bottom-rightStart'><span class='ui-border-element'>Contact</span></a>
-  </div>
-
+    <!-- This is the Contact button -->
+    <div class="button_style">
+      <a href='#' class='ui-box bottom-rightStart'><span class='ui-border-element'>About</span></a>
+      <a href='#' class='ui-box bottom-rightStart'><span class='ui-border-element'>Projects</span></a>
+      <a href='javascript:on();' class='ui-box bottom-rightStart'><span class='ui-border-element'>Contact</span></a>
+    </div>
+  </header>
+  
   <!-- This is the overlay for contact content -->
-  <span id="contact_overlay" onclick="off()">
-    <span class="center">
-        <a href="mailto:anthony.w.hall@gmail.com" target="_blank"><img src="images/contact_email.png" class="white_background"></a><a href="https://github.com/armyofunicorns" target="_blank"><img src="images/contact_github.png" class="white_background"></a><a href="https://www.linkedin.com/in/anthonyhall/" target="_blank"><img src="images/contact_linkedin.png" class="white_background"></a>
+  <section class="modal">
+    <span id="contact_overlay" onclick="off()">
+      <span class="center">
+          <a href="mailto:anthony.w.hall@gmail.com" target="_blank"><img src="./assets/images/contact_email.png" class="white_background"></a><a href="https://github.com/armyofunicorns" target="_blank"><img src="./assets/images/contact_github.png" class="white_background"></a><a href="https://www.linkedin.com/in/anthonyhall/" target="_blank"><img src="./assets/images/contact_linkedin.png" class="white_background"></a>
+      </span>
     </span>
-  </span>
+  </section>
 
- 
-  <!-- This is the splash page content -->
-  <div id="fullpage">
+  <!-- This is the intro copy -->
+  <section>
+    <div id="fullpage">
       <div class="section active" id="section0">
           <div class="inside_span"> 
             <h1>Hello. My name is Anthony.</h1>
-            <p>I’m a UX UI designer, developer, and strategist. I like unicorns. Don't judge LOL. I believe design can simplify the complex. That a well-crafted, engaging story can produce meaningful connections that increase business value. My goal is to use data to identify business opportunities, then develop tools that delight and inspire. Currently, I am building <a href="https://opescloud.com" target="_blank">OPES CLOUD</a>. Designed for healthcare practices and patients, our software creates personalized experiences that lead to better outcomes.</p> 
-        <div>
-
-        
+            <p>I’m a UX UI designer, developer, and strategist. I like unicorns. Don't judge LOL. I believe design can simplify the complex. That a well-crafted, engaging story can produce meaningful connections that increase business value. My goal is to use data to identify business opportunities, then develop tools that delight and inspire. Currently, I am building <a href="https://opescloud.com/" target="_blank">OPES CLOUD</a>. Designed for healthcare practices and patients, our software creates personalized experiences that lead to better outcomes.</p> 
+          <div>
       </div>
-  </div> 
+    </div>
+  </section>
+  
+  <!-- This is the sizzle video -->
+  <section>
+    <video autoplay muted loop id="sizzle">
+      <source src="./assets/videos/Comp1.mp4" type="video/mp4">
+    </video>
+  </section>
 
-  <!-- This is the image at the bottom of the page -->
-  <div class="onbottom">
-    <img src="images/Splash_cover.jpg" class="makeitfit">
-  </div>
+  <!-- This is the chart.js -->
+  <section>
+    <h2>Fun, useless statistic</h2>
+    <p>Post-it Notes are my friend.  Last week, I used 924 notes.</p>
+  </section>
+
+  <!-- This is about me -->
+  <section>
+    <h2>What I do</h2>
+    <p>I make cool, immersive software that solves problems and strengthens people's connections to brands.</p>
+  </section>
+
+  <!-- This is to the project samples -->
+  <section>
+    <h2>That's it! No more scrolling...</h2>
+    <p>You made it to the bottom, now check out my work.</p>
+  </section>
+
+
+  <script> 
+    var homeVideo = document.getElementById("sizzle");
+    homeVideo.width = 100%;    
+  </script> 
 
   </body>
 </html>

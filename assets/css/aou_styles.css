@@ -79,6 +79,17 @@
     display:none;
   }
 
+  /* Style the video: 100% width and height to cover the entire window */
+  #sizzle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left: 5%;
+    height: 100%;
+    width: 90%;
+  }
+
   /* Overlay */
   #contact_overlay {
     position: fixed;
