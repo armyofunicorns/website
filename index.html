@@ -1,71 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70716244-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Army of Unicorns - UX Designer, Full-Stack Developer - Anthony Hall</title>
+        <meta name="description" content="Army of Unicorns is a place to see portfolio samples, interactive experiments, and case studies from UX Designer and Full-Stack Developer, Anthony Hall." />
+        <link rel="icon" href="./favicon.png" />
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="./assets/css/aou_styles.css" />
+        <link rel="stylesheet" href="./assets/css/jquery.fullPage.css" />
+        <link rel="stylesheet" href="./assets/css/animated-border.min.css" />
 
-      gtag('config', 'UA-70716244-1');
-    </script>
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css" />
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <meta name="viewport" content="width=320,initial-scale=1.0,target-densityDPI=320dpi">
+        <!-- JQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fullPage.js"></script>
 
-    <title>Army of Unicorns</title>
+        <!--  -->
+        <script type="text/javascript">
+          $(document).ready(function() {
+              $('#fullpage').fullpage({
+                sectionsColor: ['#F4F4F4'],
+                anchors: ['firstPage'],
+              });
+
+              // Fade in function
+              $(window).load(function() {
+                $('div').each(function(i) {
+                    $(this).delay((i + 1) * 150).fadeIn(250);
+                });
+              });
+          });
+        </script>
+
+        <!-- Hide/show contact modal -->
+        <script type="text/javascript">
+          function on() {
+              document.getElementById("contact_overlay").style.display = "block";
+          }
+
+          function off() {
+              document.getElementById("contact_overlay").style.display = "none";
+          }
+        </script>
     
-    <link rel="icon" href="favicon.png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7BGE2C1BH"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-    <link href="css/aou_styles.css" rel="stylesheet" type="text/css" />
-    <link href="css/jquery.fullPage.css" rel="stylesheet" type="text/css" />
-    <link href="css/animated-border.min.css" rel="stylesheet" type="text/css" />
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css" />
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-          $('#fullpage').fullpage({
-            sectionsColor: ['#F4F4F4'],
-            anchors: ['firstPage'],
-          });
-
-          $(window).load(function() {
-             $('div').each(function(i) {
-                $(this).delay((i + 1) * 150).fadeIn(250);
-             });
-          });
-
-          setTimeout(function (){
-      			var w1 = $(window).width();
-      			$('meta[name="viewport"]').remove();//remove previous metatag (no reason just so we keep it clean)
-      			var px = 480;//target width to achieve
-      			var x = 320/w1;// calculate ratio (320 is the width set by viewport on head->meta,
-      			var out = Math.floor(px*x);//outcome..
-      			// var out = Math.floor( (32/ w1) * 480 )// alternative shortcode remove the 3 lines above :)
-      			$('<meta name="viewport" id="the_vp_special" content="width=320,initial-scale=1.0,target-densityDPI='+out+'dpi"/>').appendTo('head');//insert the new meta tag on the head 
-    			},250);
-      });
-    </script>
-    <script type="text/javascript">
-      function on() {
-          document.getElementById("contact_overlay").style.display = "block";
-      }
-
-      function off() {
-          document.getElementById("contact_overlay").style.display = "none";
-      }
-
-    </script>
-
+          gtag('config', 'G-J7BGE2C1BH');
+        </script>
   </head>
   <body>
 
