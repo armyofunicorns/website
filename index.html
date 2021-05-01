@@ -26,13 +26,13 @@
         <script type="text/javascript">
           $(document).ready(function() {
               $('#fullpage').fullpage({
-                sectionsColor: ['#F4F4F4'],
+                sectionsColor: ['#F7F4ED'],
                 anchors: ['firstPage'],
               });
 
               // Fade in function
               $(window).load(function() {
-                $('div').each(function(i) {
+                $('section').each(function(i) {
                     $(this).delay((i + 1) * 150).fadeIn(250);
                 });
               });
@@ -85,47 +85,41 @@
   </section>
 
   <!-- This is the intro copy -->
-  <section>
-    <div id="fullpage">
-      <div class="section active" id="section0">
-          <div class="inside_span"> 
-            <h1>Hello. My name is Anthony.</h1>
-            <p>I’m a UX UI designer, developer, and strategist. I like unicorns. Don't judge LOL. I believe design can simplify the complex. That a well-crafted, engaging story can produce meaningful connections that increase business value. My goal is to use data to identify business opportunities, then develop tools that delight and inspire. Currently, I am building <a href="https://opescloud.com/" target="_blank">OPES CLOUD</a>. Designed for healthcare practices and patients, our software creates personalized experiences that lead to better outcomes.</p> 
-          <div>
-      </div>
-    </div>
+  <section id="fullPage">
+    <h1>Hello. My name is Anthony.</h1>
+    <p>I’m a UX UI designer, developer, and strategist. I like unicorns. Don't judge LOL. I believe design can simplify the complex. That a well-crafted, engaging story can produce meaningful connections that increase business value. My goal is to use data to identify business opportunities, then develop tools that delight and inspire. Currently, I am building <a href="https://opescloud.com/" target="_blank">OPES CLOUD</a>. Designed for healthcare practices and patients, our software creates personalized experiences that lead to better outcomes.</p> 
   </section>
   
   <!-- This is the sizzle video -->
-  <section>
+  <section id="videoPlayer">
     <video autoplay muted loop id="sizzle">
       <source src="./assets/videos/Comp1.mp4" type="video/mp4">
     </video>
   </section>
 
   <!-- This is the chart.js -->
-  <section>
+  <!-- <section>
     <h2>Fun, useless statistic</h2>
     <p>Post-it Notes are my friend.  Last week, I used 924 notes.</p>
-  </section>
+  </section> -->
 
   <!-- This is about me -->
-  <section>
+  <!-- <section>
     <h2>What I do</h2>
     <p>I make cool, immersive software that solves problems and strengthens people's connections to brands.</p>
-  </section>
+  </section> -->
 
   <!-- This is to the project samples -->
-  <section>
+  <!-- <section>
     <h2>That's it! No more scrolling...</h2>
     <p>You made it to the bottom, now check out my work.</p>
-  </section>
+  </section> -->
 
 
-  <script> 
+  <!-- <script> 
     var homeVideo = document.getElementById("sizzle");
-    homeVideo.width = 100%;    
-  </script> 
+    console.log(homeVideo);    
+  </script>  -->
 
   </body>
 </html>

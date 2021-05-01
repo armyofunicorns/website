@@ -1,13 +1,23 @@
 /* CSS file created by Anthony Hall */
-
 /* Reset browser variations */
 /* Add a universal selector */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #fce138;
+  --secondary-color: #024e76;
+  --tertiary-color: #39a6b2;
+}
 
 /* Fonts  */
 
   /* Global Styles */
   html, body { 
-    height: 100%;
     margin: 0;
     padding: 0;
     background-color:#F4F4F4;
@@ -66,29 +76,24 @@
     opacity: 0.5;
   }
 
-  /* Backgrounds */
-  .section{
-    /*background-size: cover;*/
-  }
-
-  #section0{
-    /*background-image: url(../images/Splash.jpg);*/
-  }
-
   div {
     display:none;
   }
 
-  /* Style the video: 100% width and height to cover the entire window */
-  #sizzle {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    top: 50%;
-    left: 5%;
-    height: 100%;
+  #videoPlayer {
+    display: block;
+    position: relative;
+    border: 1px #000 solid;
     width: 90%;
   }
+
+  /* Style the video: 100% width and height to cover the entire window */
+  #sizzle {
+    height: 100%;
+    width: 100%;
+  }
+
+
 
   /* Overlay */
   #contact_overlay {
@@ -111,7 +116,6 @@
   @media screen and (min-width: 160px) and (max-width: 1024px) {
     /* Logo Styles */
     .logo_mark_black {
-      position: absolute;
       top: 5%;
       left: 6%;
       z-index: 10000;
@@ -206,7 +210,6 @@
   @media only screen and (min-width: 1024px) and (max-width: 1680px) {
     /* Logo Styles */
     .logo_mark_black {
-      position: absolute;
       top: 5%;
       left: 6%;
       z-index: 10000;
@@ -276,13 +279,11 @@
       margin: 1em 0;
     }
 
-    .inside_span {
+    #fullPage {
       width: 44%;
-      position: absolute;
       left: 6%;
       top: 35%;
-      z-index: 100000;
-      transform: translate(0, -50%);
+      border: 1px #000 solid;
     }
 
     .onbottom {
@@ -300,7 +301,6 @@
   @media only screen  and (min-width: 1680px) {
     /* Logo Styles */
     .logo_mark_black {
-      position: absolute;
       top: 5%;
       left: 6%;
       z-index: 10000;
