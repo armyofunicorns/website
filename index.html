@@ -11,7 +11,7 @@
         
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/aou_styles.css" />
-        <link rel="stylesheet" href="./assets/css/jquery.fullPage.css" />
+        <!-- <link rel="stylesheet" href="./assets/css/jquery.fullPage.css" /> -->
         <link rel="stylesheet" href="./assets/css/animated-border.min.css" />
 
         <!-- Font -->
@@ -20,18 +20,24 @@
         <!-- JQuery -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="./assets/js/jquery.fullPage.js"></script>
+        <!-- <script type="text/javascript" src="./assets/js/jquery.fullPage.js"></script> -->
 
         <!--  -->
         <script type="text/javascript">
           $(document).ready(function() {
-              $('#fullpage').fullpage({
-                sectionsColor: ['#F7F4ED'],
-                anchors: ['firstPage'],
-              });
+            console.log( "ready!" );
+              // $('#fullPage').fullpage({
+              //   sectionsColor: ['#F7F4ED'],
+              //   anchors: ['firstPage'],
+              // });
+
+              $( window ).on( "load", function() {
+        
+    });
 
               // Fade in function
               $(window).load(function() {
+                console.log( "window loaded" );
                 $('section').each(function(i) {
                     $(this).delay((i + 1) * 150).fadeIn(250);
                 });
@@ -63,18 +69,21 @@
   <body>
   <header>
     <!-- This is the logo -->
-    <div class="circle_time">
+    <div>
       <img src="./assets/images/armyofunicorns_logo_black.png" class="logo_mark_black" id="logo" />
     </div>
 
     <!-- This is the Contact button -->
-    <div class="button_style">
-      <a href='#' class='ui-box bottom-rightStart'><span class='ui-border-element'>About</span></a>
-      <a href='#' class='ui-box bottom-rightStart'><span class='ui-border-element'>Projects</span></a>
-      <a href='javascript:on();' class='ui-box bottom-rightStart'><span class='ui-border-element'>Contact</span></a>
-    </div>
+    <nav>
+      <ul>
+        <li><a href='#' class='ui-box bottom-rightStart'><span class='ui-border-element'>About</span></a></li>
+        <li><a href='#' class='ui-box bottom-rightStart'><span class='ui-border-element'>Projects</span></a></li>
+        <li><a href='javascript:on();' class='ui-box bottom-rightStart'><span class='ui-border-element'>Contact</span></a></li>
+      </ul>
+    </nav>
   </header>
   
+  <!-- TODO: convert the modal contents to flexbox -->
   <!-- This is the overlay for contact content -->
   <section class="modal">
     <span id="contact_overlay" onclick="off()">
@@ -85,9 +94,9 @@
   </section>
 
   <!-- This is the intro copy -->
-  <section id="fullPage">
-    <h1>Hello. My name is Anthony.</h1>
-    <p>I’m a UX UI designer, developer, and strategist. I like unicorns. Don't judge LOL. I believe design can simplify the complex. That a well-crafted, engaging story can produce meaningful connections that increase business value. My goal is to use data to identify business opportunities, then develop tools that delight and inspire. Currently, I am building <a href="https://opescloud.com/" target="_blank">OPES CLOUD</a>. Designed for healthcare practices and patients, our software creates personalized experiences that lead to better outcomes.</p> 
+  <section id="introText">
+    <h1>Hi. My name is Anthony.</h1>
+    <p>I’m an ux ui designer, full stack developer, and product strategist. I love to build software that creates rich, meaningful connections and increase business value. When people use my apps, my goal is to make them smile. It always comes down to experiences. This is my portfolio. It’s a work-in-progress.</p> 
   </section>
   
   <!-- This is the sizzle video -->
