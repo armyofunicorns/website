@@ -18,7 +18,7 @@
 }
 /* Global Styles */
 body { 
-  color: var(--quaternary-color);
+  color: var(--primary-color);
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
   font-weight:bold;
@@ -76,13 +76,15 @@ div {
 
 /* Define the a element */
 a {
-  color: var(--tertiary-color);
-  text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
 /* Define hover pseudo class on a element */
 a:hover { 
-  text-decoration: none; 
+  color: var(--tertiary-color);
+  text-decoration: none;
+  /* cursor: pointer;  */
 }
 
 /* Hide everything fade in with JQuery */
@@ -108,6 +110,7 @@ header {
 header a {
   color: var(--primary-color);
   text-decoration: none;
+  cursor: pointer;
 }
 
 /* Define the header area */
@@ -135,6 +138,7 @@ header nav ul li a {
   color: var(--primary-color);
   font-size: 1.55vw;
   /* font-size: .80em; */
+  cursor: pointer;
 }
 
 header nav ul li a:hover {
@@ -175,16 +179,12 @@ p {
   margin: .5em 0;
 }
 
-/* Update this */
+/* TODO: Add Flexbox to this */
 /* Modal */
 .white_background {
   background-color: #f4f4f4;
   padding: 20px;
   margin: 10px;
-}
-
-span.center > a:hover {
-  opacity: 0.5;
 }
 
 #contact_overlay {
@@ -208,15 +208,82 @@ span.center > a:hover {
   position: relative;
   width: 100%;
   padding: 0;
+  overflow: hidden;
+}
+
+/* Put text over the image or video */
+.textOverlay {
+  position: absolute;
+  left: 12%;
+  bottom: 18%;
+  width: 36%;
+}
+
+div.title {
+  font-size: .85em;
+  color: var(--senary-color);
+  font-weight:bold;
+  font-style:normal;
+  padding: 2% 0;
+}
+
+#videoPlayer .textOverlay h1 {
+  font-size: 2em;
+  margin: 0;
+  color: var(--senary-color);
+}
+
+div.arrow {
+  margin: 6% 0;
+  font-size: 1.4em;
+  color: var(--senary-color);
+}
+
+div.arrow::before {
+  content: "";
+  display:inline-block;
+}
+
+.textOverlay .arrow a {
+  color: var(--senary-color);
+}
+
+.textOverlay .arrow a:hover {
+  color: var(--tertiary-color);
+}
+#next:before {
+  content:"Learn More";
+  position:absolute;
+  color: var(--tertiary-color);
+  left: 12%;
+  opacity: 0;
+  transition: 0.2s ease-in;
+  padding-top: 6px;
+}
+
+#next span {
+  display: inline-block;
+  transition: 0.2s ease-in;
+}
+
+#next:hover span {
+  transform: translateX(50%);
+}
+
+#next:hover:before {
+  opacity: 1;
+}
+
+.arrow-right {
+  font-size: 1.5em;
 }
 
 /* Style the video */
 #sizzle {
   height: 100%;
   width: 100%;
+  z-index: -10;
 }
-
-
 
 /* Media Queries */
 /* Smartphones (portrait and landscape) ----------- */
