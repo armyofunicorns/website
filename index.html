@@ -22,6 +22,9 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
         <!-- <script type="text/javascript" src="./assets/js/jquery.fullPage.js"></script> -->
 
+        <!-- Charts.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+
         <!--  -->
         <script type="text/javascript">
           $(document).ready(function() {
@@ -81,18 +84,19 @@
   
   <!-- TODO: convert the modal contents to flexbox -->
   <!-- This is the overlay for contact content -->
-  <section class="modal">
-    <span id="contact_overlay" onclick="off()">
-      <span class="center">
-          <a href="mailto:anthony.w.hall@gmail.com" target="_blank"><img src="./assets/images/contact_email.png" class="white_background"></a><a href="https://github.com/armyofunicorns" target="_blank"><img src="./assets/images/contact_github.png" class="white_background"></a><a href="https://www.linkedin.com/in/anthonyhall/" target="_blank"><img src="./assets/images/contact_linkedin.png" class="white_background"></a>
-      </span>
-    </span>
+  <section id="modal">
+    <div id="contact_overlay" onclick="off()">
+      <ul>
+        <li><a href="https://github.com/armyofunicorns" target="_blank"><img src="./assets/images/contact_github.png" class="buttonHit color-white"></a></li>
+        <li><a href="https://www.linkedin.com/in/anthonyhall/" target="_blank"><img src="./assets/images/contact_linkedin.png" class="buttonHit color-white"></a></li>
+      </ul>
+    </div>
   </section>
 
   <!-- This is the intro copy -->
   <section id="introText">
     <h1>Hi. My name is Anthony.</h1>
-    <p>I’m an ux ui designer, full stack developer, and product strategist. I love to build software that creates rich, meaningful connections, and increases business value. When people use my apps, my goal is to make them smile. It always comes down to experiences. This is my portfolio. It’s a work-in-progress.</p> 
+    <p>I’m an ux ui designer, full stack developer, and product strategist. I build software that is easy-to-use and increases business value. My goal is to create products that help people develop meaningful connections. It always comes down to experiences. Have a question or want to send me a message? Let's connect. Thanks!</p> 
   </section>
   
   <!-- This is the sizzle video -->
@@ -102,42 +106,155 @@
     </video>
 
     <div class="textOverlay">
-      <div class="title">Latest project</div>
+      <div class="title color-white">Latest project</div>
      
       <h1>OPES CLOUD: Personalized healthcare creating superior patient outcomes.</h1>
       
       <div class="arrow">
         <a href="https://opescloud.com" target="_blank" id="next"><span class="arrow-right">&#10142;</span></a>
-      </div>
-          
+      </div>    
+    </div>    
+  </section>
+
+  <!-- This is the chart.js -->
+  <section id="weeklyChart" >
+    <canvas id="myChart" width="400" height="400" aria-label="Post-it Note Consumption Per Week" role="img" class="color-lt-grey"></canvas>
+    <script>
+      // Do not show lines for all datasets by default
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['APR 25', 'APR 26', 'APR 27', 'APR 28', 'APR 29', 'APR 30', 'MAY 1'],
+          datasets: [{
+            label: '',
+            data: [
+              0, 32, 59, 65, 41, 28, 0
+            ],
+            backgroundColor: [
+              'rgba(48, 48, 48, 0.8)'
+            ],
+            borderColor: [
+              'rgba(48, 48, 48, 1)'
+            ],
+            borderWidth: 6,
+            fill: true,
+          }]
+        },
+        options: {
+          elements: {
+            point: {
+              backgroundColor: 'white',
+              borderWidth: 4,
+              borderColor: 'rgba(255, 255, 255, 1)',
+              radius: 6
+            }
+          },
+          layout: {
+            padding: 2
+          },
+          plugins: {
+            title: {
+              display: false
+            },
+            tooltip: {
+              enabled: true,
+              mode: 'nearest',
+              titleFont: {
+                family: "'Nunito', sans-serif",
+                size: 12,
+                style: "normal",
+              },
+              titleAlign: 'center',
+              bodyFont: {
+                family: "'Nunito', sans-serif",
+                size: 42,
+                style: "normal",
+              },
+              bodyAlign: 'center',
+              padding: 20,
+              displayColors: false              
+            },
+            legend: {
+              display: false,
+              labels: {
+                textAlign: 'center',
+                padding: 20,
+                font: {
+                  family: "'Nunito', sans-serif",
+                  size: 22,
+                  style: "normal",
+                }
+              }
+            }
+          },
+          maintainAspectRatio: false,
+          grid: {
+            display: false
+          },
+          scales: {         
+            y: {
+              beginAtZero: false,
+              grid: {
+                color: 'white',
+                borderColor: 'white',
+                tickColor: 'white'
+              },
+              ticks: {
+                display: false
+              }
+            },
+            x: {
+            grid: {
+                color: 'rgba(240, 240, 240, .9)',
+                borderColor: 'rgba(240, 240, 240, .9)',
+                tickColor: 'rgba(240, 240, 240, .9)'
+              },
+              ticks: {
+                color: 'rgba(48, 48, 48, 1)',
+                font: {
+                  family: "'Nunito', sans-serif",
+                  size: 22,
+                  style: "normal",
+                }
+              }
+            } 
+          },
+            tension:  0.4,
+          }
+      });
+    </script>
+
+    <div class="textOverlayChart">
+      <h1>Useless fun stat</h1>
+      <p>Post-its are my friend. Last week, I used <span class="make-bold">225</span>.</p>
+    </div>
+  </section>
+
+  <!-- This is about me -->
+  <section id="aboutMe" class="color-white">
+    <div class="aboutMeText">
+      <div class="title color-dk-grey">What I do</div>
+      
+      <h1>I make cool, immersive software that solves problems and strengthens people's connections to brands.</h1>
+      
+      <div class="arrow">
+        <a href="https://opescloud.com" target="_blank" id="next"><span class="arrow-right">&#10142;</span></a>
+      </div> 
+    </div>
+
+    <div class="aboutMeImage">
+      <img src="./assets/images/anthony-hall-2020@2x.jpg" alt="Photo in the tall grasses of Tilden Park, Berkeley, CA.">
     </div>
 
     
   </section>
 
-  <!-- This is the chart.js -->
-  <!-- <section>
-    <h2>Fun, useless statistic</h2>
-    <p>Post-it Notes are my friend.  Last week, I used 924 notes.</p>
-  </section> -->
-
-  <!-- This is about me -->
-  <!-- <section>
-    <h2>What I do</h2>
-    <p>I make cool, immersive software that solves problems and strengthens people's connections to brands.</p>
-  </section> -->
-
   <!-- This is to the project samples -->
-  <!-- <section>
-    <h2>That's it! No more scrolling...</h2>
+  <section id="projectPortfolio">
+    <h1>That's it! No more scrolling...</h1>
     <p>You made it to the bottom, now check out my work.</p>
-  </section> -->
-
-
-  <!-- <script> 
-    var homeVideo = document.getElementById("sizzle");
-    console.log(homeVideo);    
-  </script>  -->
+  </section>
 
   </body>
 </html>

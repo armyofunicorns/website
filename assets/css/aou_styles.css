@@ -14,7 +14,8 @@
   --tertiary-color: #FFC0CB;
   --quaternary-color: #F7F4ED;
   --quinary-color: #000;
-  --senary-color: #f4f4f4;
+  --senary-color: #FFF;
+  --septenary-color: #F0F0F0;
 }
 /* Global Styles */
 body { 
@@ -23,21 +24,6 @@ body {
   font-size: 1em;
   font-weight:bold;
   font-style:normal;
-  /* text-decoration: underline; */
-}
-
-/* Need to research what these do. */
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-div {
-  -webkit-user-select: auto; /* Safari 3.1+ */
-  -moz-user-select: auto; /* Firefox 2+ */
-  -ms-user-select: auto; /* IE 10+ */
-  user-select: auto; /* Standard syntax */
 }
 
 /* Utility classes */
@@ -54,7 +40,7 @@ div {
 }
 
 /* Color Styles */
-.color-blue {
+.color-dk-grey {
   color: var(--primary-color);
 }
 
@@ -72,6 +58,14 @@ div {
 
 .color-black {
   color: var(--quinary-color);
+}
+
+.color-white {
+  color: var(--senary-color);
+}
+
+.color-lt-grey {
+  color: var(--septenary-color);
 }
 
 /* Define the a element */
@@ -103,7 +97,6 @@ header {
   top: 0;
   padding: 2% 6%;
   z-index: 9999;
-  /* border: 1px #FFC0CB solid; */
 }
 
 /* Define the a element */
@@ -116,7 +109,6 @@ header a {
 /* Define the header area */
 header nav {
   margin: 10px 0;
-  /* border: 1px #FFC0CB solid; */
 }
 
 /* Override the ul li elements */
@@ -151,13 +143,11 @@ header nav ul li a:hover {
   height: 65px;
   opacity: 1;
   z-index: 10000;
-  /* border: 1px #FFC0CB solid; */
 }
 
 /* Define the introText */
 #introText {
   position: relative;
-  /* border: 1px #FFC0CB solid; */
   padding: 6% 0;
 }
 
@@ -181,10 +171,10 @@ p {
 
 /* TODO: Add Flexbox to this */
 /* Modal */
-.white_background {
-  background-color: #f4f4f4;
-  padding: 20px;
-  margin: 10px;
+#modal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 #contact_overlay {
@@ -200,6 +190,30 @@ p {
   opacity: 0.95;
   z-index: 2000000;
   cursor: pointer;
+}
+
+/* Override the ul li elements */
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+/* Define the space between each li */
+header nav ul li {
+  padding: 16px;
+}
+
+/* Define the a element in the nav */
+header nav ul li a {
+  cursor: pointer;
+}
+
+.buttonHit {
+  padding: 20px;
+  margin: 10px;
 }
 
 /* Video sizzle section */
@@ -221,7 +235,6 @@ p {
 
 div.title {
   font-size: .85em;
-  color: var(--senary-color);
   font-weight:bold;
   font-style:normal;
   padding: 2% 0;
@@ -234,7 +247,7 @@ div.title {
 }
 
 div.arrow {
-  margin: 6% 0;
+  margin: 1% 0;
   font-size: 1.4em;
   color: var(--senary-color);
 }
@@ -252,10 +265,10 @@ div.arrow::before {
   color: var(--tertiary-color);
 }
 #next:before {
-  content:"Learn More";
+  content:"Visit opescloud.com";
   position:absolute;
   color: var(--tertiary-color);
-  left: 12%;
+  left: 64px;
   opacity: 0;
   transition: 0.2s ease-in;
   padding-top: 6px;
@@ -284,6 +297,68 @@ div.arrow::before {
   width: 100%;
   z-index: -10;
 }
+
+/* Style for the chart */
+#myChart {
+  z-index: 100000;
+  width: 50%;
+  height:50%;
+}
+
+#weeklyChart {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.textOverlayChart {
+  position: absolute;
+  right: 12%;
+  top: 18%;
+  width: 24%;
+}
+
+.textOverlayChart h1, p {
+  color: var(--primary-color); 
+}
+
+.textOverlayChart .make-bold {
+  font-weight: bold;
+  background-color: #FFC0CB;
+  padding: 4px;
+}
+
+/* Styles for About Me */
+#aboutMe {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: var(--septenary-color);
+  padding: 6% 0;
+}
+
+.aboutMeText {
+  margin: 12%;
+  flex: 1;
+  border: 1px #FFC0CB solid;
+}
+
+.aboutMeImage {
+  margin-right: 12%;
+  flex: 1;
+  border: 1px #FFC0CB solid;
+  
+}
+
+.aboutMeImage img {
+  width: 100%;
+}
+
 
 /* Media Queries */
 /* Smartphones (portrait and landscape) ----------- */
