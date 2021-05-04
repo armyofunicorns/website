@@ -116,26 +116,44 @@
     </div>    
   </section>
 
+  <!-- This is about me -->
+  <section id="aboutMe">
+    <div class="aboutMeImage">
+      <img src="./assets/images/anthony-hall-2020@2x.jpg" alt="Photo in the tall grasses of Tilden Park, Berkeley, CA.">
+    </div>
+
+    <div class="aboutMeText">
+      <div class="title color-white">What I do</div>
+      
+      <h1>I make cool, immersive software that solves problems and strengthens people's connections to brands.</h1>
+      
+      <div class="arrow">
+        <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>
+      </div> 
+    </div>
+  </section>
+
   <!-- This is the chart.js -->
-  <section id="weeklyChart" >
-    <canvas id="myChart" width="400" height="400" aria-label="Post-it Note Consumption Per Week" role="img" class="color-lt-grey"></canvas>
+  <section id="weeklyChart" class="color-lt-grey">
+    <canvas id="myChart" width="400" height="400" aria-label="Post-it Note Consumption Per Week" role="img" style="background-color: #F0F0F0;"></canvas>
     <script>
       // Do not show lines for all datasets by default
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['APR 25', 'APR 26', 'APR 27', 'APR 28', 'APR 29', 'APR 30', 'MAY 1'],
+          labels: ['26', '27', '28', '29', '30'],
           datasets: [{
             label: '',
+            backgroundColor: 'rgba(48, 48, 48, 1)',
             data: [
-              0, 32, 59, 65, 41, 28, 0
+              59, 56, 81, 41, 44
             ],
             backgroundColor: [
-              'rgba(48, 48, 48, 0.8)'
+              'rgba(48, 48, 48, 1)'
             ],
             borderColor: [
-              'rgba(48, 48, 48, 1)'
+              'rgba(255, 255, 255, .8)'
             ],
             borderWidth: 6,
             fill: true,
@@ -144,7 +162,7 @@
         options: {
           elements: {
             point: {
-              backgroundColor: 'white',
+              backgroundColor: 'rgba(255, 255, 255, 1)',
               borderWidth: 4,
               borderColor: 'rgba(255, 255, 255, 1)',
               radius: 6
@@ -196,9 +214,9 @@
             y: {
               beginAtZero: false,
               grid: {
-                color: 'white',
-                borderColor: 'white',
-                tickColor: 'white'
+                color: 'rgba(240, 240, 240, .9)',
+                borderColor: 'rgba(240, 240, 240, .9)',
+                tickColor: 'rgba(240, 240, 240, .9)'
               },
               ticks: {
                 display: false
@@ -206,9 +224,9 @@
             },
             x: {
             grid: {
-                color: 'rgba(240, 240, 240, .9)',
-                borderColor: 'rgba(240, 240, 240, .9)',
-                tickColor: 'rgba(240, 240, 240, .9)'
+                color: 'rgba(255, 255, 255, .9)',
+                borderColor: 'rgba(255, 255, 255, .9)',
+                tickColor: 'rgba(255, 255, 255, .9)'
               },
               ticks: {
                 color: 'rgba(48, 48, 48, 1)',
@@ -226,34 +244,20 @@
     </script>
 
     <div class="textOverlayChart">
-      <h1>Useless fun stat</h1>
-      <p>Post-its are my friend. Last week, I used <span class="make-bold">225</span>.</p>
+      <h1>Useless fun stat about me</h1>
+      <p>Post-its are my friend. Last week, I used <span class="make-bold">281</span>.</p>
     </div>
   </section>
 
-  <!-- This is about me -->
-  <section id="aboutMe" class="color-white">
-    <div class="aboutMeText">
-      <div class="title color-dk-grey">What I do</div>
-      
-      <h1>I make cool, immersive software that solves problems and strengthens people's connections to brands.</h1>
-      
-      <div class="arrow">
-        <a href="https://opescloud.com" target="_blank" id="next"><span class="arrow-right">&#10142;</span></a>
-      </div> 
-    </div>
-
-    <div class="aboutMeImage">
-      <img src="./assets/images/anthony-hall-2020@2x.jpg" alt="Photo in the tall grasses of Tilden Park, Berkeley, CA.">
-    </div>
-
-    
-  </section>
+  
 
   <!-- This is to the project samples -->
   <section id="projectPortfolio">
     <h1>That's it! No more scrolling...</h1>
     <p>You made it to the bottom, now check out my work.</p>
+    <div class="arrow">
+      <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>
+    </div>
   </section>
 
   </body>
