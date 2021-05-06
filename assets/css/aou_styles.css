@@ -26,6 +26,17 @@ body {
   font-style:normal;
 }
 
+/* Styles for the scrolling value */
+#scrollDiv {
+  position: fixed;
+  right: 2%;
+  z-index: 100000;
+}
+
+#percentScrollLen {
+  font-size: 0.8em;
+}
+
 /* Utility classes */
 .text-left {
   text-align: left;
@@ -83,8 +94,8 @@ a:hover {
 
 /* Hide everything fade in with JQuery */
 section {
-  /* display:none; */
-  opacity: 0;
+  display:none;
+  /* opacity: 0; */
 }
 
 /* Define all header styles */
@@ -232,6 +243,31 @@ header nav ul li a {
   margin: 10px;
 }
 
+/* Styles for the footer */
+footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#backToTop {
+  margin: 1% 2%;
+  font-size: .8em;
+  cursor: pointer;
+}
+
+footer div {
+  opacity: 1;
+}
+
+footer div:hover {
+  opacity: .5;
+}
+
+footer div:hover:after {
+  content: ' Jump to top ';
+}
+
 /* Video sizzle section */
 #videoPlayer {
   display: block;
@@ -341,7 +377,7 @@ div.arrow::before {
   color: var(--primary-color); 
 }
 
-.textOverlayChart .make-bold {
+.make-bold {
   font-weight: bold;
   background-color: #FFC0CB;
   padding: 4px;
@@ -388,9 +424,19 @@ div.arrow::before {
 /* Media Queries */
 /* Smartphones (portrait and landscape) ----------- */
 @media screen and (max-width: 1280px) {
+  /* Update the style on the H1 */
   #introText {
     left: 12%;
     width: 76%;
+  }
+
+  /* Update the style on the text over the sizzle */
+  .textOverlay {
+    position: absolute;
+    left: 12%;
+    bottom: 18%;
+    width: 36%;
+    overflow: scroll;
   }
 }
 

@@ -37,6 +37,11 @@
         </script>
   </head>
   <body>
+  <!-- This calculates the total percentage scrolled -->
+  <div id="scrollDiv">
+    <p id="percentScrollLen">0%</p>
+  </div>
+
   <header>
     <!-- This is the logo -->
     <div>
@@ -53,7 +58,6 @@
     </nav>
   </header>
   
-  <!-- TODO: convert the modal contents to flexbox -->
   <!-- This is the overlay for contact content -->
   <div id="contactOverlay" onclick="off()">
     <ul>
@@ -214,7 +218,7 @@
     </script>
 
     <div class="textOverlayChart">
-      <h1>Useless fun stat about me</h1>
+      <h1>Useless fun stat</h1>
       <p>Post-its are my friend. Last week, I used <span class="make-bold">281</span>.</p>
     </div>
   </section>
@@ -222,11 +226,15 @@
   <!-- This is to the project samples -->
   <section id="projectPortfolio">
     <h1>That's it! No more scrolling...</h1>
-    <p>You made it to the bottom, now check out my work.</p>
+    <p>You scrolled <span id="totalScrollLen" class="make-bold"></span> pixels, now check out my work.</p>
     <div class="arrow">
       <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>
     </div>
   </section>
+
+  <footer>
+    <div id="backToTop" onclick="jumpToTop()">&#8593;</div>
+  </footer>
 
   </body>
 </html>
