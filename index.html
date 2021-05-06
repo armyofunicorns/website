@@ -11,7 +11,6 @@
         
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/aou_styles.css" />
-        <!-- <link rel="stylesheet" href="./assets/css/jquery.fullPage.css" /> -->
         <link rel="stylesheet" href="./assets/css/animated-border.min.css" />
 
         <!-- Font -->
@@ -20,41 +19,13 @@
         <!-- JQuery -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-        <!-- <script type="text/javascript" src="./assets/js/jquery.fullPage.js"></script> -->
 
         <!-- Charts.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
 
-        <!--  -->
-        <script type="text/javascript">
-          $(document).ready(function() {
-            console.log( "window ready" );
-              // $('#fullPage').fullpage({
-              //   sectionsColor: ['#F7F4ED'],
-              //   anchors: ['firstPage'],
-              // });
-
-              // Fade in function
-              $(window).load(function() {
-                console.log( "window loaded" );
-                $('section').each(function(i) {
-                    $(this).delay((i + 1) * 150).fadeIn(250);
-                });
-              });
-          });
-        </script>
-
-        <!-- Hide/show contact modal -->
-        <script type="text/javascript">
-          function on() {
-              document.getElementById("contact_overlay").style.display = "block";
-          }
-
-          function off() {
-              document.getElementById("contact_overlay").style.display = "none";
-          }
-        </script>
-    
+        <!-- Script tag -->
+        <script src="./assets/js/script.js"></script>
+        
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7BGE2C1BH"></script>
         <script>
@@ -84,14 +55,12 @@
   
   <!-- TODO: convert the modal contents to flexbox -->
   <!-- This is the overlay for contact content -->
-  <section id="modal">
-    <div id="contact_overlay" onclick="off()">
-      <ul>
-        <li><a href="https://github.com/armyofunicorns" target="_blank"><img src="./assets/images/contact_github.png" class="buttonHit color-white"></a></li>
-        <li><a href="https://www.linkedin.com/in/anthonyhall/" target="_blank"><img src="./assets/images/contact_linkedin.png" class="buttonHit color-white"></a></li>
-      </ul>
-    </div>
-  </section>
+  <div id="contactOverlay" onclick="off()">
+    <ul>
+      <li><a href="https://github.com/armyofunicorns" target="_blank"><img src="./assets/images/contact-github-new.png" class="buttonHit color-white"></a></li>
+      <li><a href="https://www.linkedin.com/in/anthonyhall/" target="_blank"><img src="./assets/images/contact-linkedin-new.png" class="buttonHit color-white"></a></li>
+    </ul>
+  </div>
 
   <!-- This is the intro copy -->
   <section id="introText">
@@ -142,7 +111,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['26', '27', '28', '29', '30'],
+          labels: ['APR 26', 'APR 27', 'APR 28', 'APR 29', 'APR 30'],
           datasets: [{
             label: '',
             backgroundColor: 'rgba(48, 48, 48, 1)',
@@ -229,6 +198,7 @@
                 tickColor: 'rgba(255, 255, 255, .9)'
               },
               ticks: {
+                display: false,
                 color: 'rgba(48, 48, 48, 1)',
                 font: {
                   family: "'Nunito', sans-serif",
@@ -248,8 +218,6 @@
       <p>Post-its are my friend. Last week, I used <span class="make-bold">281</span>.</p>
     </div>
   </section>
-
-  
 
   <!-- This is to the project samples -->
   <section id="projectPortfolio">

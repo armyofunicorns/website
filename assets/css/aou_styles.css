@@ -83,7 +83,8 @@ a:hover {
 
 /* Hide everything fade in with JQuery */
 section {
-  display:none;
+  /* display:none; */
+  opacity: 0;
 }
 
 /* Define all header styles */
@@ -172,13 +173,7 @@ p {
 
 /* TODO: Add Flexbox to this */
 /* Modal */
-#modal {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-#contact_overlay {
+#contactOverlay {
   position: fixed;
   display: none;
   width: 100%;
@@ -191,6 +186,26 @@ p {
   opacity: 0.95;
   z-index: 2000000;
   cursor: pointer;
+}
+
+#contactOverlay ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  border: 1px solid #FFC0CB;
+  height: 100%;
+}
+
+#contactOverlay ul li {
+  background-color: #FFF;
+  border: 1px solid #FFC0CB;
+}
+
+#contactOverlay img {
+  width: 50%;
+  flex: 1;
 }
 
 /* Override the ul li elements */
