@@ -2,7 +2,7 @@
 
 // JQuery ready
 $(function(){
-    $('#introText').fadeIn('slow');
+    $('#introText').fadeIn(1200);
       
     $(window).scroll(function() {
         console.log('---------------------');
@@ -19,7 +19,7 @@ $(function(){
         //     window.outerHeight, document.documentElement.clientHeight);
         // windowLengthPx = window.screen.height;
 
-        var windowLengthPx = $(window).scrollTop() + $(window).height();
+        var windowLengthPx = window.screen.height;
         // Fixed value
         console.log("Window length: " + windowLengthPx);
 
@@ -58,7 +58,7 @@ $(function(){
         var y = Math.round(window.scrollY);
         // console.log("Window Scrolly: " + y);
 
-        $("#scrollDiv").css({"font-size": 0.8 + "em", "padding-top": 1 + "%", "top": y*winPagePercentage*.01 + "px"});
+        $("#scrollDiv").css({"font-size": 0.8 + "em", "padding-top": 1 + "%", "top": y*winPagePercentage*.0115 + "px"});
 
         // Fade in sections
         /* Check the location of each desired element */
