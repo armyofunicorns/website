@@ -1,8 +1,8 @@
 /* CSS file created by Anthony Hall */
 
 // JQuery ready
-$(document).ready(function() {
-    console.log('window ready');
+$(function(){
+    $('#introText').fadeIn('slow');
       
     $(window).scroll(function() {
         console.log('---------------------');
@@ -12,21 +12,20 @@ $(document).ready(function() {
         // Capture some page and window values
         // $( ".changeText" ).append( "<div>Handler for .scroll() called.</div>" );
         // var changeTextLoc = document.getElementById('changeText').pageHeight;
-        
-
         // var changeTextLen = document.documentElement.clientHeight;
         
         // This is the available screen height
         // var windowLengthPx = Math.max(window.screen.height, window.screen.availHeight, 
         //     window.outerHeight, document.documentElement.clientHeight);
+        // windowLengthPx = window.screen.height;
 
-        var windowLengthPx = window.screen.height;
+        var windowLengthPx = $(window).scrollTop() + $(window).height();
         // Fixed value
         console.log("Window length: " + windowLengthPx);
 
         // This is the current scroll value
         var changeTextLen = window.pageYOffset;
-        console.log("Current Scroll: " + changeTextLen);
+        // console.log("Current Scroll: " + changeTextLen);
 
         // This is the total page height
         var pageLengthPx = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
@@ -40,13 +39,12 @@ $(document).ready(function() {
             percentageLen = 100;
         }
         // Limit to no more than 100
-        console.log("Percentage Length: " + percentageLen);
+        // console.log("Percentage Length: " + percentageLen);
 
         // This is the percentage difference between the window and page
         var winPagePercentage = Math.floor(100-(((pageLengthPx - windowLengthPx)/pageLengthPx)*100));
         // Fixed value
-        console.log('Viewport percentage: ' + winPagePercentage);
-
+        // console.log('Viewport percentage: ' + winPagePercentage);
 
         // Change the text on the screen
         var newText = document.getElementById('scrollDiv');
@@ -58,18 +56,35 @@ $(document).ready(function() {
         // $("#slide").css("top", Math.max(180 - 0.2*window.scrollY, 0) + "px");
 
         var y = Math.round(window.scrollY);
-        console.log("Window Scrolly: " + y);
+        // console.log("Window Scrolly: " + y);
 
-        $("#scrollDiv").css({"font-size": 0.8 + "em", "padding-top": 1 + "%", "top": y*winPagePercentage*.0122 + "px"});
+        $("#scrollDiv").css({"font-size": 0.8 + "em", "padding-top": 1 + "%", "top": y*winPagePercentage*.01 + "px"});
+
+        // Fade in sections
+        /* Check the location of each desired element */
+        
+        $('.startHidden').each( function(i){
+            // Get my information
+            var divBottom = $(this).position().top + $(this).outerHeight();
+            console.log ("bottom of object: " + divBottom);
+            var divWindow = $(window).scrollTop() + $(window).height();
+            console.log ("bottom of window: " + divWindow);
+            /* If the object is completely visible in the window, fade it it */
+            if( divWindow > divBottom ){
+                $(this).animate({'opacity':'1'},1500);    
+            }
+            
+        }); 
+
     });
 
     // Fade in function
     $(window).load(function() {
         console.log('window loaded');
-        $('section').each(function(i) {
-            console.log(i);
-            $(this).delay((i + 1) * 150).fadeIn(100);
-        });
+        // $('section').each(function(i) {
+        //     console.log(i);
+        //     $(this).delay((i + 1) * 150).fadeIn(100);
+        // });
     });
 });
 

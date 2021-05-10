@@ -93,9 +93,8 @@ a:hover {
 }
 
 /* Hide everything fade in with JQuery */
-section {
-  display:none;
-  /* opacity: 0; */
+.startHidden {
+  opacity: 0;
 }
 
 /* Define all header styles */
@@ -162,6 +161,7 @@ header nav ul li a:hover {
 #introText {
   position: relative;
   padding: 6% 0;
+  display: none;
 }
 
 /* Define the text styles */
