@@ -77,15 +77,6 @@ $(function(){
         }); 
 
     });
-
-    // Fade in function
-    $(window).load(function() {
-        console.log('window loaded');
-        // $('section').each(function(i) {
-        //     console.log(i);
-        //     $(this).delay((i + 1) * 150).fadeIn(100);
-        // });
-    });
 });
 
 // Overlay for modal
