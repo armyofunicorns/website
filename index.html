@@ -24,7 +24,7 @@
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
         
         <!-- Styles -->
-        <link rel="stylesheet" href="./assets/css/aou_styles.css" />
+        <link rel="stylesheet" href="./assets/css/mf-styles.css" />
         <link rel="stylesheet" href="./assets/css/animated-border.min.css" />
 
         <!-- Font -->
@@ -87,8 +87,12 @@
 
   <!-- This is the intro copy -->
   <section id="introText">
-    <h1>Hi. My name is Anthony.</h1>
-    <p>I’m an ux ui designer, full stack developer, and product strategist. I build software that is easy-to-use and increases business value. My goal is to create products that help people develop meaningful connections. It always comes down to experiences. Have a question or want to send me a message? Let's connect. Thanks!</p> 
+    <h1>Hello. My name is Anthony.</h1>
+    <p>I am a ux ui designer, full stack developer, and product strategist. I build software that is easy-to-use and increases business value. It always comes down to experiences. I truly believe that if can create a meaningful connection for someone, one that makes them smile and remember, you're on the right path. </p> 
+
+    <div class="arrow">
+      <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>
+    </div>
   </section>
   
   <!-- This is the sizzle video -->
@@ -98,12 +102,12 @@
     </video>
 
     <div class="textOverlay">
-      <div class="title color-white">Latest project</div>
+      <div class="title color-dk-grey">Latest project</div>
      
-      <h1>OPES CLOUD: Personalized healthcare creating superior patient outcomes.</h1>
+      <h2>OPES CLOUD: Personalized healthcare creating superior patient outcomes.</h2>
       
       <div class="arrow">
-        <a href="https://opescloud.com" target="_blank" id="next"><span class="arrow-right">&#10142;</span></a>
+        <a href="https://opescloud.com" target="_blank" id="next"><span class="arrow-right color-dk-grey">&#10142;</span></a>
       </div>    
     </div>    
   </section>
@@ -115,9 +119,9 @@
     </div>
 
     <div class="aboutMeText">
-      <div class="title color-white">What I do</div>
+      <div class="title color-dk-grey">What I do</div>
       
-      <h1>I make cool, immersive software that solves problems and strengthens people's connections to brands.</h1>
+      <h2>I make cool, immersive software that solves problems and strengthens people's connections to brands.</h2>
       
       <div class="arrow">
         <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>
@@ -125,39 +129,47 @@
     </div>
   </section>
 
+  <section id="textOverlayChart">
+      <h2>Useless stat</h2>
+      <p>Post-its are my friend. Last week, I used <span class="make-bold">334</span>.</p>
+  </section>
+
   <!-- This is the chart.js -->
-  <section id="weeklyChart" class="color-lt-grey startHidden">
-    <canvas id="myChart" width="400" height="400" aria-label="Post-it Note Consumption Per Week" role="img" style="background-color: #F0F0F0;"></canvas>
+  <section id="weeklyChart" class="gradient-background startHidden">
+    <canvas id="myChart" width="400" height="400" aria-label="Post-it Note Consumption Per Week" role="img"></canvas>
     <script>
       // Do not show lines for all datasets by default
-      var ctx = document.getElementById('myChart').getContext('2d');
-      var myChart = new Chart(ctx, {
+      let ctx = document.getElementById('myChart').getContext('2d');
+      var gradient = ctx.createLinearGradient(500, 0, 100, 0);
+      gradient.addColorStop(0, '#FFFFFF');   
+      gradient.addColorStop(1, '#F7F4ED');
+      let myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['APR 26', 'APR 27', 'APR 28', 'APR 29', 'APR 30'],
+          labels: ['May 10', 'May 11', 'May 12', 'May 13', 'May 14', 'May 15', 'May 16'],
           datasets: [{
             label: '',
-            backgroundColor: 'rgba(48, 48, 48, 1)',
             data: [
-              59, 56, 81, 41, 44
+              59, 56, 62, 41, 44, 37, 35
             ],
-            backgroundColor: [
-              'rgba(48, 48, 48, 1)'
-            ],
-            borderColor: [
-              'rgba(255, 255, 255, .8)'
-            ],
-            borderWidth: 6,
             fill: true,
+            backgroundColor: 'rgba(48, 48, 48, 1)',
+            borderColor: [
+              'rgba(255, 255, 255, .9)'
+            ],
+            borderWidth: 4,
           }]
         },
         options: {
+          animation: {
+            easing: "easeInOutQuint"
+          },
           elements: {
             point: {
-              backgroundColor: 'rgba(255, 255, 255, 1)',
+              backgroundColor: 'rgba(48, 48, 48, 1)',
               borderWidth: 4,
               borderColor: 'rgba(255, 255, 255, 1)',
-              radius: 6
+              radius: 16
             }
           },
           layout: {
@@ -204,11 +216,11 @@
           },
           scales: {         
             y: {
-              beginAtZero: false,
+              beginAtZero: true,
               grid: {
-                color: 'rgba(240, 240, 240, .9)',
-                borderColor: 'rgba(240, 240, 240, .9)',
-                tickColor: 'rgba(240, 240, 240, .9)'
+                color: 'rgba(255, 255, 255, 0)',
+                borderColor: 'rgba(255, 255, 255, 0)',
+                tickColor: 'rgba(255, 255, 255, 0)',
               },
               ticks: {
                 display: false
@@ -216,13 +228,13 @@
             },
             x: {
             grid: {
-                color: 'rgba(255, 255, 255, .9)',
-                borderColor: 'rgba(255, 255, 255, .9)',
-                tickColor: 'rgba(255, 255, 255, .9)'
+                color: 'rgba(255, 255, 255, 0)',
+                borderColor: 'rgba(255, 255, 255, 0)',
+                tickColor: 'rgba(255, 255, 255, 0)',
               },
               ticks: {
                 display: false,
-                color: 'rgba(48, 48, 48, 1)',
+                color: 'rgba(48, 48, 48, 0)',
                 font: {
                   family: "'Nunito', sans-serif",
                   size: 22,
@@ -235,11 +247,6 @@
           }
       });
     </script>
-
-    <div class="textOverlayChart">
-      <h1>Useless fun stat</h1>
-      <p>Post-its are my friend. Last week, I used <span class="make-bold">281</span>.</p>
-    </div>
   </section>
 
   <!-- This is to the project samples -->

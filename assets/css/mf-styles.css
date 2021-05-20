@@ -1,0 +1,518 @@
+/* CSS file created by Anthony Hall */
+/* Reset browser variations */
+/* Add a universal selector */
+/* Built mobile first */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-color: #303030;
+    --secondary-color: #4A90E2;
+    --tertiary-color: #FFC0CB;
+    --quaternary-color: #F7F4ED;
+    /* --quaternary-color: #FCFBF0; */
+    --quinary-color: #000000;
+    --senary-color: #FFFFFF;
+    --septenary-color: #F0F0F0;
+  }
+  
+  /* Global Styles */
+  body { 
+    color: var(--primary-color);
+    background-color:  var(--senary-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+    font-weight:bold;
+    font-style:normal;
+  }
+  
+  /* Styles for the scrolling value */
+  #scrollDiv {
+    position: fixed;
+    right: 2%;
+    z-index: 100000;
+  }
+  
+  #percentScrollLen {
+    font-size: 0.8em;
+  }
+  
+  /* Utility classes */
+  .text-left {
+    text-align: left;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .flex-row {
+    display: flex;
+  }
+  
+  /* Color Styles */
+  .color-dk-grey {
+    color: var(--primary-color);
+  }
+  
+  .color-lt-blue {
+    color: var(--secondary-color);
+  }
+  
+  .color-pink {
+    color: var(--tertiary-color);
+  }
+  
+  .color-yellow-white {
+    color: var(--quaternary-color);
+  }
+  
+  .color-black {
+    color: var(--quinary-color);
+  }
+  
+  .color-white {
+    color: var(--senary-color);
+  }
+  
+  .color-lt-grey {
+    color: var(--septenary-color);
+  }
+
+  .gradient-background {
+    background-image: linear-gradient(#ffffff, #F7F4ED);
+  }
+  
+  /* Define the a element */
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  /* Define hover pseudo class on a element */
+  a:hover { 
+    color: var(--tertiary-color);
+    text-decoration: none;
+    /* cursor: pointer;  */
+  }
+  
+  /* Hide everything fade in with JQuery */
+  .startHidden {
+    opacity: 0;
+  }
+  
+  /* Define all header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: var(--quaternary-color);
+    background-color: transparent;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 2% 6%;
+    z-index: 9999;
+  }
+
+  /* Override the ul li elements */
+  header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+  }
+  
+  /* Define the space between each li */
+  header nav ul li {
+    padding: 24px 0;
+  }
+
+  /* Define the a element */
+  header nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  header nav ul li a:hover {
+    color: var(--primary-color);
+  } 
+  
+  /* Define the logo styles  */
+  #logo {
+    width: 64px;
+    height: 64px;
+    opacity: 1;
+    z-index: 10000;
+  }
+  
+  /* Define the introText */
+  #introText {
+    position: relative;
+    padding: 6% 0;
+    display: none;
+    left: 12%;
+    width: 76%;
+  }
+  
+  /* Define the text styles */
+  h1 {
+    font-size: 2.25rem;
+    font-weight:bold;
+    font-style:normal;
+    line-height: 2.75rem;
+    color: var(--primary-color);
+    margin: .5rem 0 0 0;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    font-weight:normal;
+    font-style:normal;
+    line-height: 2rem;
+    color: var(--primary-color);
+    margin: .5em 0;
+  }
+  
+  /* TODO: Add Flexbox to this */
+  /* Modal */
+  #contactOverlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--senary-color);
+    opacity: 0.95;
+    z-index: 2000000;
+    cursor: pointer;
+  }
+  
+  #contactOverlay ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    border: 1px solid #FFC0CB;
+    height: 100%;
+  }
+  
+  #contactOverlay ul li {
+    background-color: #FFF;
+    border: 1px solid #FFC0CB;
+  }
+  
+  #contactOverlay img {
+    width: 50%;
+    flex: 1;
+  }
+  
+
+  
+  .buttonHit {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  /* Styles for the footer */
+  footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  #backToTop {
+    margin: 1% 2%;
+    font-size: .8em;
+    cursor: pointer;
+  }
+  
+  footer div {
+    opacity: 1;
+  }
+  
+  footer div:hover {
+    opacity: .5;
+  }
+  
+  footer div:hover:after {
+    content: ' Jump to top ';
+  }
+  
+  /* Video sizzle section */
+  #videoPlayer {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  /* Styles for the Latest Project section
+  Put text over the image or video except on mobile */
+  
+  .textOverlay {
+    position: relative;
+    left: 12%;
+    margin: 8% 0;
+    width: 76%;
+  }
+  
+  div.title {
+    font-size: .85rem;
+    font-weight:bold;
+    font-style:normal;
+    padding: 2% 0;
+  }
+  
+  #videoPlayer .textOverlay h1 {
+    margin: 0;
+    color: var(--primary-color);
+  }
+  
+  /* Styles for the arrow link and animation */
+  div.arrow {
+    margin: 1% 0;
+    font-size: 1.4em;
+    color: var(--senary-color);
+  }
+  
+  div.arrow::before {
+    content: "";
+    display:inline-block;
+  }
+  
+  .textOverlay .arrow a {
+    color: var(--senary-color);
+  }
+  
+  .textOverlay .arrow a:hover {
+    color: var(--tertiary-color);
+  }
+  
+  #next:before {
+    content:"More";
+    position:absolute;
+    color: var(--tertiary-color);
+    opacity: 0;
+    transition: 0.2s ease-in;
+    padding-top: 6px;
+    margin-left: 56px;
+  }
+  
+  #next span {
+    display: inline-block;
+    transition: 0.2s ease-in;
+  }
+  
+  #next:hover span {
+    transform: translateX(50%);
+  }
+  
+  #next:hover:before {
+    opacity: 1;
+  }
+  
+  .arrow-right {
+    font-size: 1.5em;
+  }
+  
+  /* Style the video */
+  #sizzle {
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+  }
+  
+  /* Style for the chart */  
+  #weeklyChart {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  #textOverlayChart {
+    position: relative;
+    padding: 0 12%;
+    background-color: transparent;
+  }
+  
+  #textOverlayChart h1, p {
+    color: var(--primary-color); 
+  }
+
+  #myChart {
+    z-index: 100000;
+    width: 50%;
+    height:50%;
+  }
+  
+  .make-bold {
+    font-weight: bold;
+    background-color: #FFC0CB;
+    padding: 4px;
+  }
+  
+  /* Styles for About Me */
+  #aboutMe {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--senary-color);
+    padding: 6% 0;
+  }
+  
+  .aboutMeText {
+    margin: 12%;
+  }
+  
+  #aboutMe h1 {
+    margin: 0;
+    color: var(--primary-color);
+  }
+  
+  .aboutMeImage {
+    margin: 0 12%;
+  }
+  
+  .aboutMeImage img {
+    width: 100%;
+    padding: 6% 0 0 0;
+  }
+  
+  /* Styles about portfolio prompt */
+  #projectPortfolio {
+    position: relative;
+    padding: 12%;
+    background-color: var(--quaternary-color);
+  }
+  
+/* Media Queries */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) {
+    /* Update the size of the logo */
+    #logo {
+        width: 72px;
+        height: 72px;
+        opacity: 1;
+        z-index: 10000;
+      }
+
+    /* Update the header area */
+    header nav {
+        margin: 10px 0;
+    }
+
+    /* Override the ul li elements */
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+
+    /* Define the space between each li */
+    header nav ul li {
+        padding: 16px;
+    }
+
+    /* Styles for About Me */
+    #aboutMe {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: var(--senary-color);
+        padding: 6% 0;
+    }
+  
+    .aboutMeText {
+        margin: 12%;
+        flex: 1;
+    }
+    
+    #aboutMe h1 {
+        font-size: 2.25rem;
+        font-weight:bold;
+        font-style:normal;
+        line-height: 2.75rem;
+        margin: 0;
+        color: var(--primary-color);
+    }
+    
+    .aboutMeImage {
+        margin-left: 12%;
+        flex: 1;
+    }
+  
+    .aboutMeImage img {
+        width: 100%;
+    }
+
+    /* Update styles for the text over sizzle */
+    .textOverlay {
+        position: absolute;
+        left: 12%;
+        bottom: 18%;
+        width: 36%;
+      }
+      
+      div.title {
+        font-size: .85rem;
+        font-weight:bold;
+        font-style:normal;
+        padding: 2% 0;
+      }
+      
+      #videoPlayer .textOverlay h1 {
+        font-size: 2.25rem;
+        font-weight:bold;
+        font-style:normal;
+        line-height: 2.75rem;
+        margin: 0;
+        color: var(--senary-color);
+      }
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1280px) {
+/* Update the style on the H1 */
+    #introText {
+        left: 12%;
+        width: 36%;
+    }
+    
+/* Update the style on the text over the sizzle */
+    .textOverlay {
+        overflow: scroll;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+}
+
+
+
+

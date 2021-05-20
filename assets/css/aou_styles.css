@@ -18,6 +18,7 @@
   --senary-color: #FFF;
   --septenary-color: #F0F0F0;
 }
+
 /* Global Styles */
 body { 
   color: var(--primary-color);

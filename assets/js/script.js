@@ -5,37 +5,41 @@ $(function(){
     $('#introText').fadeIn(1200);
     dataLayer.push({'opes_cloud': '/o/40599u8kolnobpr'});
       
-    $(window).scroll(function() {
+    $(window).scroll(function(e) {
         console.log('---------------------');
         console.log('scrolling');
         console.log('---------------------');
 
+        // Fade out the navigation
+        if ($(window).scrollTop() >= $("nav").height()) $("nav").fadeOut(500);
+        else $("nav").fadeIn(500);
+
         // Capture some page and window values
         // $( ".changeText" ).append( "<div>Handler for .scroll() called.</div>" );
-        // var changeTextLoc = document.getElementById('changeText').pageHeight;
-        // var changeTextLen = document.documentElement.clientHeight;
+        // let changeTextLoc = document.getElementById('changeText').pageHeight;
+        // let changeTextLen = document.documentElement.clientHeight;
         
         // This is the available screen height
-        // var windowLengthPx = Math.max(window.screen.height, window.screen.availHeight, 
+        // let windowLengthPx = Math.max(window.screen.height, window.screen.availHeight, 
         //     window.outerHeight, document.documentElement.clientHeight);
         // windowLengthPx = window.screen.height;
 
-        var windowLengthPx = window.screen.height;
+        let windowLengthPx = window.screen.height;
         // Fixed value
         console.log("Window length: " + windowLengthPx);
 
         // This is the current scroll value
-        var changeTextLen = window.pageYOffset;
+        let changeTextLen = window.pageYOffset;
         // console.log("Current Scroll: " + changeTextLen);
 
         // This is the total page height
-        var pageLengthPx = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
+        let pageLengthPx = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
             document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);           
         // Fixed value
         console.log("Page Length: " + pageLengthPx);
 
         // This is the current scroll length as a percentage of total length
-        var percentageLen = Math.round(100-(((pageLengthPx - windowLengthPx) - changeTextLen)/(pageLengthPx - windowLengthPx))*100);
+        let percentageLen = Math.round(100-(((pageLengthPx - windowLengthPx) - changeTextLen)/(pageLengthPx - windowLengthPx))*100);
         if (percentageLen > 100) {
             percentageLen = 100;
         }
@@ -43,20 +47,20 @@ $(function(){
         // console.log("Percentage Length: " + percentageLen);
 
         // This is the percentage difference between the window and page
-        var winPagePercentage = Math.floor(100-(((pageLengthPx - windowLengthPx)/pageLengthPx)*100));
+        let winPagePercentage = Math.floor(100-(((pageLengthPx - windowLengthPx)/pageLengthPx)*100));
         // Fixed value
         // console.log('Viewport percentage: ' + winPagePercentage);
 
         // Change the text on the screen
-        var newText = document.getElementById('scrollDiv');
-        var newText2 = document.getElementById('totalScrollLen');
+        let newText = document.getElementById('scrollDiv');
+        let newText2 = document.getElementById('totalScrollLen');
         newText.innerHTML = percentageLen + '%';
         newText2.innerHTML = changeTextLen;
 
         // Now I have to move the text down the page
         // $("#slide").css("top", Math.max(180 - 0.2*window.scrollY, 0) + "px");
 
-        var y = Math.round(window.scrollY);
+        let y = Math.round(window.scrollY);
         // console.log("Window Scrolly: " + y);
 
         $("#scrollDiv").css({"font-size": 0.8 + "em", "padding-top": 1 + "%", "top": y*winPagePercentage*.0115 + "px"});
@@ -66,13 +70,13 @@ $(function(){
         
         $('.startHidden').each( function(i){
             // Get my information
-            var divBottom = $(this).position().top + $(this).outerHeight();
+            let divBottom = $(this).position().top + $(this).outerHeight();
             console.log ("bottom of object: " + divBottom);
-            var divWindow = $(window).scrollTop() + $(window).height();
+            let divWindow = $(window).scrollTop() + $(window).height();
             console.log ("bottom of window: " + divWindow);
             /* If the object is completely visible in the window, fade it it */
             if( divWindow > divBottom ){
-                $(this).animate({'opacity':'1'},1500);    
+                $(this).animate({'opacity':'1'},1000);    
             }
             
         }); 
@@ -92,7 +96,6 @@ function off() {
 // Jump to top
 function jumpToTop() {
     // document.getElementById("backToTop").onclick = function() {
-    
     console.log('got here');
     window.scrollTo(0,0);
 };
