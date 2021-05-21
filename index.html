@@ -86,7 +86,7 @@
   </div>
 
   <!-- This is the intro copy -->
-  <section id="introText">
+  <section id="introText" class="startOnload">
     <h1>Hello. My name is Anthony.</h1>
     <p>I am a ux ui designer, full stack developer, and product strategist. I build software that is easy-to-use and increases business value. It always comes down to experiences. I truly believe that if can create a meaningful connection for someone, one that makes them smile and remember, you're on the right path. </p> 
 
@@ -96,12 +96,12 @@
   </section>
   
   <!-- This is the sizzle video -->
-  <section id="videoPlayer" class="startHidden">
-    <video autoplay muted loop id="sizzle">
+  <section id="videoPlayer">
+    <video autoplay muted loop id="sizzle" class="startHidden">
       <source src="./assets/videos/Comp1.mp4" type="video/mp4">
     </video>
 
-    <div class="textOverlay">
+    <div class="textOverlay startHidden">
       <div class="title color-dk-grey">Latest project</div>
      
       <h2>OPES CLOUD: Personalized healthcare creating superior patient outcomes.</h2>
@@ -113,12 +113,12 @@
   </section>
 
   <!-- This is about me -->
-  <section id="aboutMe" class="startHidden">
-    <div class="aboutMeImage">
+  <section id="aboutMe" >
+    <div class="aboutMeImage" class="startHidden">
       <img src="./assets/images/anthony-hall-2020@2x.jpg" alt="Photo in the tall grasses of Tilden Park, Berkeley, CA.">
     </div>
 
-    <div class="aboutMeText">
+    <div class="aboutMeText startHidden">
       <div class="title color-dk-grey">What I do</div>
       
       <h2>I make cool, immersive software that solves problems and strengthens people's connections to brands.</h2>
@@ -129,7 +129,7 @@
     </div>
   </section>
 
-  <section id="textOverlayChart">
+  <section id="textOverlayChart" class="startHidden">
       <h2>Useless stat</h2>
       <p>Post-its are my friend. Last week, I used <span class="make-bold">334</span>.</p>
   </section>
@@ -251,7 +251,7 @@
 
   <!-- This is to the project samples -->
   <section id="projectPortfolio" class="startHidden">
-    <h1>That's it! No more scrolling...</h1>
+    <h1>That's it!</h1>
     <p>You scrolled <span id="totalScrollLen" class="make-bold"></span> pixels, now check out my work.</p>
     <div class="arrow">
       <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>

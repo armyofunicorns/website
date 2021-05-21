@@ -26,7 +26,7 @@ $(function(){
 
         let windowLengthPx = window.screen.height;
         // Fixed value
-        console.log("Window length: " + windowLengthPx);
+        // console.log("Window length: " + windowLengthPx);
 
         // This is the current scroll value
         let changeTextLen = window.pageYOffset;
@@ -36,7 +36,7 @@ $(function(){
         let pageLengthPx = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
             document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);           
         // Fixed value
-        console.log("Page Length: " + pageLengthPx);
+        // console.log("Page Length: " + pageLengthPx);
 
         // This is the current scroll length as a percentage of total length
         let percentageLen = Math.round(100-(((pageLengthPx - windowLengthPx) - changeTextLen)/(pageLengthPx - windowLengthPx))*100);
@@ -69,6 +69,7 @@ $(function(){
         /* Check the location of each desired element */
         
         $('.startHidden').each( function(i){
+            console.log(i);
             // Get my information
             let divBottom = $(this).position().top + $(this).outerHeight();
             console.log ("bottom of object: " + divBottom);
