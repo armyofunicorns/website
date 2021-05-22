@@ -46,8 +46,10 @@ $(function(){
         // yFA = yFA * 0.01;
 
         // Determines the percentage the user has scrolled down the page
-        let zCV = Math.ceil(100-((zF - zC)/zF)*100);
-        zCV = zCV;
+        let zCV1 = Math.ceil(100-((zF - zC)/zF)*100);
+        let zCV2 = zCV1;
+        zCVA = zCV1 * .05;
+        zCV2 = Math.ceil(zCV1 - zCVA);
 
         // Determines the scrollY so that 100% is at the bottom of the page
         // let zCA = Math.floor(zCV*yFA);
@@ -68,7 +70,7 @@ $(function(){
 
         // Change the text on the screen
         let newText = document.getElementById('scrollDiv');
-        newText.innerHTML = zCV + '%';
+        newText.innerHTML = zCV1 + '%';
         let newText2 = document.getElementById('totalScrollLen');
         newText2.innerHTML = zC;
         
@@ -87,7 +89,7 @@ $(function(){
         // let y = Math.round(window.scrollY);
         // console.log("Window Scrolly: " + y);
 
-        $("#scrollDiv").css({"font-size": 0.5 + "em", "padding-top": 1 + "%", "padding-bottom": 1 + "%", "top": zCV + "%"});
+        $("#scrollDiv").css({"font-size": 0.5 + "em", "padding-top": 1 + "%", "padding-bottom": 1 + "%", "top": zCV2 + "%"});
 
         // Fade in sections as I scroll down the page
         /* Check the location of each desired element */
