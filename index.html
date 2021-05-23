@@ -77,35 +77,50 @@
     <!-- This is the Contact button -->
     <nav>
       <ul>
-        <li><a href='#' class='ui-box bottom-rightStart'><span class='ui-border-element'>About</span></a></li>
-        <li><a href='#' class='ui-box bottom-rightStart'><span class='ui-border-element'>Projects</span></a></li>
-        <li><a href='javascript:on();' class='ui-box bottom-rightStart'><span class='ui-border-element'>Contact</span></a></li>
+        <li><a href='javascript:on(1);' class='ui-box bottom-rightStart'><span class='ui-border-element'>About</span></a></li>
+        <li><a href='javascript:on(2);' class='ui-box bottom-rightStart'><span class='ui-border-element'>Projects</span></a></li>
+        <li><a href='javascript:on(0);' class='ui-box bottom-rightStart'><span class='ui-border-element'>Contact</span></a></li>
       </ul>
     </nav>
   </header>
   
   <!-- This is the overlay for contact content -->
-  <div id="contactOverlay" onclick="off()">
+  <div id="contactModal" onclick="off(0)">
     <ul>
       <li><a href="https://github.com/armyofunicorns" target="_blank"><img src="./assets/images/contact-github-new.png" class="buttonHit color-white"></a></li>
       <li><a href="https://www.linkedin.com/in/anthonyhall/" target="_blank"><img src="./assets/images/contact-linkedin-new.png" class="buttonHit color-white"></a></li>
     </ul>
   </div>
 
+  <div id="aboutModal" onclick="off(1)">
+    <ul>
+      <li><p>Coming Soon. The About page is coming soon.</p></li>
+    </ul>
+  </div>
+
+  <div id="projectsModal" onclick="off(2)">
+    <ul>
+      <li><p>Coming Soon. The Projects page is coming soon.</p></li>
+    </ul>
+  </div>
+
   <!-- This is the intro copy -->
   <section id="introText" class="startOnload">
     <h1>Hello. My name is Anthony.</h1>
-    <p>I am a ux ui designer, full stack developer, and product strategist. My goal is to build software that people say is easy-to-use and businesses say increases in business value. It always comes down to experiences. I truly believe that if can create a meaningful connection for someone, one that makes them smile and remember, you're on the right path. </p> 
+    <p>I am a ux ui designer, full stack developer, and product strategist. My goal is to build software that is easy-to-use and increase business value. It always comes down to experiences. If you create meaningful connections for peoples, ones that makes people smile, you're on the right path. </p> 
 
     <div class="arrow">
-      <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>
+      <a href="javascript:on(1);" id="next"><span class="arrow-right">&#10142;</span></a>
     </div>
   </section>
   
   <!-- This is the sizzle video -->
   <section id="videoPlayer">
-    <video autoplay muted loop id="sizzle" class="startHidden">
-      <source src="./assets/videos/Comp1.mp4" type="video/mp4">
+    <video autoplay muted loop id="sizzle" class="startHidden forDesktop">
+      <source src="./assets/videos/sizzle-desktop_compressed.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop id="sizzle" class="startHidden forMobile">
+      <source src="./assets/videos/sizzle-mobile_compressed.mp4" type="video/mp4">
     </video>
 
     <div class="textOverlay startHidden">
@@ -131,7 +146,7 @@
       <h2>I make cool, immersive software that solves problems and strengthens people's connections to brands.</h2>
       
       <div class="arrow">
-        <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>
+        <a href="javascript:on(1);" id="next"><span class="arrow-right">&#10142;</span></a>
       </div> 
     </div>
   </section>
@@ -139,6 +154,7 @@
   <section id="textOverlayChart" class="startHidden">
       <h2>Useless stat</h2>
       <p>Post-its are my friend. Last week, I used <span class="make-bold">334</span>.</p>
+      <p>Hover on a point below to see how many used per day.</p>
   </section>
 
   <!-- This is the chart.js -->
@@ -153,7 +169,7 @@
       let myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['May 10', 'May 11', 'May 12', 'May 13', 'May 14', 'May 15', 'May 16'],
+          labels: ['May 17', 'May 18', 'May 19', 'May 20', 'May 21', 'May 22', 'May 23'],
           datasets: [{
             label: '',
             data: [
@@ -261,7 +277,7 @@
     <h1>That's it!</h1>
     <p>You scrolled <span id="totalScrollLen" class="make-bold"></span> pixels, now check out my work.</p>
     <div class="arrow">
-      <a href="./about.html" id="next"><span class="arrow-right">&#10142;</span></a>
+      <a href="javascript:on(2);" id="next"><span class="arrow-right">&#10142;</span></a>
     </div>
   </section>
 

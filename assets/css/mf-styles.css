@@ -29,15 +29,6 @@
     font-weight:bold;
     font-style:normal;
   }
-
-  #testData {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center; 
-    position: fixed;
-    z-index: 99999999;
-  }
   
   /* Styles for the scrolling value */
   #scrollDiv {
@@ -190,7 +181,7 @@
   
   /* TODO: Add Flexbox to this */
   /* Modal */
-  #contactOverlay {
+  #contactModal, #aboutModal, #projectsModal {
     position: fixed;
     display: none;
     width: 100%;
@@ -199,34 +190,36 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--senary-color);
+    background-color: var(--quaternary-color);
     opacity: 0.95;
     z-index: 2000000;
     cursor: pointer;
   }
   
-  #contactOverlay ul {
+  #contactModal ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     list-style: none;
-    border: 1px solid #FFC0CB;
     height: 100%;
   }
   
-  #contactOverlay ul li {
-    background-color: #FFF;
-    border: 1px solid #FFC0CB;
+  #contactModal ul li {
+    background-color: var(--senary-color);
+    border-radius: 24px;
+    margin: 1rem;
   }
   
-  #contactOverlay img {
-    width: 50%;
+  #contactModal ul li:hover {
+    opacity: .5;
+  }
+
+  #contactModal img {
+    width: 124px;
     flex: 1;
   }
-  
 
-  
   .buttonHit {
     padding: 20px;
     margin: 10px;
@@ -265,7 +258,15 @@
     padding: 0;
     overflow: hidden;
   }
+
+  .forMobile {
+      display: inline;
+  }
   
+  .forDesktop {
+      display: none;
+  }
+
   /* Styles for the Latest Project section
   Put text over the image or video except on mobile */
   
@@ -440,41 +441,6 @@
         padding: 16px;
     }
 
-    /* Styles for About Me */
-    #aboutMe {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        margin: 0 auto;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        background-color: var(--senary-color);
-        padding: 6% 0;
-    }
-  
-    .aboutMeText {
-        margin: 12%;
-        flex: 1;
-    }
-    
-    #aboutMe h1 {
-        font-size: 2.25rem;
-        font-weight:bold;
-        font-style:normal;
-        line-height: 2.75rem;
-        margin: 0;
-        color: var(--primary-color);
-    }
-    
-    .aboutMeImage {
-        margin-left: 12%;
-        flex: 1;
-    }
-  
-    .aboutMeImage img {
-        width: 100%;
-    }
-
     /* Update styles for the text over sizzle */
     .textOverlay {
         position: absolute;
@@ -489,7 +455,7 @@
         font-style:normal;
         padding: 2% 0;
       }
-      
+      /* Updated settings for sizzle video */
       #videoPlayer .textOverlay h1 {
         font-size: 2.25rem;
         font-weight:bold;
@@ -498,9 +464,50 @@
         margin: 0;
         color: var(--senary-color);
       }
+
+      .forMobile {
+        display: none;
+    }
+    
+    .forDesktop {
+        display: inline;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
+    /* Styles for About Me */
+    #aboutMe {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background-color: var(--senary-color);
+        padding: 6% 0;
+    }
+  
+    .aboutMeText {
+        margin: 12 12 12 0%;
+        flex: 1;
+    }
+    
+    #aboutMe h1 {
+        font-size: 2.25rem;
+        font-weight:bold;
+        font-style:normal;
+        line-height: 2.75rem;
+        margin: 0;
+        color: var(--primary-color);
+    }
+    
+    .aboutMeImage {
+        flex: 1;
+    }
+  
+    .aboutMeImage img {
+        width: 150%;
+    }
 
 }
 
