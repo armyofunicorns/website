@@ -380,6 +380,10 @@ div.arrow::before {
   color: var(--primary-color); 
 }
 
+.textOverlayChart p:last-child {
+  font-size: .75rem;
+}
+
 .make-bold {
   font-weight: bold;
   background-color: #FFC0CB;

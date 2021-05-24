@@ -196,7 +196,7 @@
     cursor: pointer;
   }
   
-  #contactModal ul {
+  #contactModal ul, #aboutModal ul, #projectsModal ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -211,8 +211,14 @@
     margin: 1rem;
   }
   
-  #contactModal ul li:hover {
+  #contactModal ul li a:hover {
     opacity: .5;
+  }
+  
+  #aboutModal h2, #projectsModal h2 {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
   }
 
   #contactModal img {
@@ -354,12 +360,22 @@
   
   #textOverlayChart {
     position: relative;
-    padding: 0 12%;
+    padding: 6% 12% 0 12%;
     background-color: transparent;
   }
   
-  #textOverlayChart h1, p {
-    color: var(--primary-color); 
+  #textOverlayChart h2, p {
+    /* color: var(--primary-color);  */
+    
+  }
+
+  #textOverlayChart p {
+    margin: 0;
+  }
+
+  #textOverlayChart p:last-child {
+    font-size: .75rem;
+    line-height: 1rem;
   }
 
   #myChart {
@@ -445,7 +461,7 @@
     .textOverlay {
         position: absolute;
         left: 12%;
-        bottom: 18%;
+        bottom: 0;
         width: 36%;
       }
       
