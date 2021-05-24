@@ -2,8 +2,7 @@
 
 // JQuery ready
 $(function(){
-    dataLayer.push({'opes_cloud': '/o/40599u8kolnobpr'});
-      
+
     $(window).scroll(function(e) {
         // Fade out the navigation on scroll down the page
         if ($(window).scrollTop() >= $("nav").height()) $("nav").fadeOut(500);
@@ -36,8 +35,7 @@ $(function(){
         $("#scrollDiv").css({"font-size": 0.5 + "em", "padding-top": 1 + "%", "padding-bottom": 1 + "%", "top": zCV2 + "%"});
 
         // Fade in sections as I scroll down the page
-        $('.startHidden').each(function(i){
-            console.log(i);
+        $('.startHidden').each(function(i){ 
             // Captain, where are we now?
             let divBottom = $(this).position().top + $(this).outerHeight();
             let divWindow = $(window).scrollTop() + $(window).height();
@@ -46,13 +44,7 @@ $(function(){
                 $(this).animate({'opacity':'1'},1000);    
             }
         }); 
-
     });
-
-    window.onload = (event) => {
-        console.log('Page is fully loaded');
-        
-    };
 });
 
 // Events for modal overlay
